@@ -1,13 +1,13 @@
-package com.oop.labs.calculator;
+package com.labs.calculator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CalculatorApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalculatorApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.oop.labs.calculator.controller;
+package com.labs.calculator.controller;
 
 import org.springframework.stereotype.Service;
 

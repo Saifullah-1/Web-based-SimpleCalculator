@@ -1,6 +1,7 @@
 <template>
     <div id="screen">
-        <div id="output">{{ expression1 }} <br> {{ expression2 }}</div>
+        <div id="output1">{{ expression1 }}</div>
+        <div id="output2">{{ expression2 }}</div>
     </div>
     <div id="buttons">
         <button id="%" @click="unaryOp('per')">%</button>
@@ -147,7 +148,6 @@ export default {
         },
         binaryOp(op) {
             const len = this.expression1.length
-            const lastChar = this.expression1.charAt(len - 1)
             if(op == 'd')
                 op = '/'
             this.expression1 = this.expression2 + " " + op
@@ -169,19 +169,33 @@ export default {
 }
 
 #screen {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
     height: 25%;
 }
 
-#output {
-    display: block;
-    height: 100%;
-    padding: 10px;
-    background-color: aqua;
+#output1,
+#output2 {
+    display: flex;
+    padding: 5px;
+    background-color: #ccc7b9;
     text-align: right;
-    letter-spacing: 2px;
-    font-size: 35px;
-    overflow: auto;
+    width: 100%;
+    height: 50%;
+    letter-spacing: 1.5px;
+    align-items: flex-end;
+}
+
+#output1 {
+    font-size: 1.5vw;
+    justify-content: flex-end;
+}
+
+#output2 {
+    justify-content: flex-end;
+    font-size: 2.5vw;
 }
 
 #buttons {
@@ -189,18 +203,28 @@ export default {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
     height: 75%;
+    background-color: #e0e0e0;
 }
 
 button {
     font-size: large;
-    border: 1px solid #000000;
+    border: 1px solid #f5f5f7;
+    border-radius: 5%;
+    background-color: #e0e0e0;
+    margin: 1px;
 }
 
 .active {
-    background-color: #9394a5;
+    background-color: #636474;
+    color: #ffffff;
 }   
 
 button:hover {
-    opacity: 0.7;
+    background-color: rgb(255, 255, 255, 50%)
 }
+
+.active:hover {
+    background-color: rgb(99, 100, 115, 80%);
+}
+
 </style>
